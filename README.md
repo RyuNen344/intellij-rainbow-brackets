@@ -3,8 +3,8 @@
         <img src="./src/main/resources/META-INF/pluginIcon.svg" width="320" height="320" alt="logo"/>
     </a>
 </div>
-<h1 align="center">Intellij rainbow brackets</h1>
-<p align="center">Rainbow Brackets / Rainbow Parentheses for IntelliJ based IDEs.</p>
+<h1 align="center">Intellij rainbow brackets android</h1>
+<p align="center">Rainbow Brackets / Rainbow Parentheses for IntelliJ based IDEs / Android Studioで動くようにjvm1.8をtargetにするやつ</p>
 
 <p align="center"> 
 <a href="https://circleci.com/gh/izhangzhihao/intellij-rainbow-brackets"><img src="https://img.shields.io/circleci/project/github/izhangzhihao/intellij-rainbow-brackets/2020.1.svg?style=flat-square"></a>
