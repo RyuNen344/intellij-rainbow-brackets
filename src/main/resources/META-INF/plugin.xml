@@ -57,6 +57,25 @@
         ]]></description>
 
     <change-notes><![CDATA[
+        <p>6.9.1</p>
+        <ul>
+            <li>Fix <a href="https://github.com/izhangzhihao/intellij-rainbow-brackets/issues/445">#445: No working on Android Studio canary 4.2</a></li>
+            <li>Some bug fixs and code refactorings</li>
+        </ul>
+        <br/>
+
+        <p>6.7</p>
+        <ul>
+            <li>Fix NPE</li>
+        </ul>
+        <br/>
+        
+        <p>6.6</p>
+        <ul>
+            <li>Fix <a href="https://github.com/izhangzhihao/intellij-rainbow-brackets/issues/436">#436: Duplicated indent guides in 2020.2 EAP</a></li>
+        </ul>
+        <br/>
+
         <p>6.5</p>
         <ul>
             <li>Fix <a href="https://github.com/izhangzhihao/intellij-rainbow-brackets/issues/410">#410: ArrayIndexOutOfBoundsException</a></li>
@@ -580,6 +599,8 @@
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
     <idea-version since-build="201.6668"/>
+
+    <incompatible-with>com.intellij.modules.androidstudio</incompatible-with>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
          on how to target different products -->

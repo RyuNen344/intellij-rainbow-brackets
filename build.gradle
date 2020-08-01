@@ -13,11 +13,10 @@ buildscript {
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.4.20"
+    id "org.jetbrains.intellij" version "0.4.21"
     id "com.adarshr.test-logger" version "2.0.0"
     id "de.undercouch.download" version "4.0.2"
     id "org.jetbrains.kotlin.jvm" version "1.3.71"
-    id "jacoco"
     id "idea"
 }
 
@@ -45,11 +44,12 @@ def pluginsDependencies = ['java',
                            'Groovy',
                            'properties',
                            'yaml',
-                           "org.jetbrains.kotlin:$kotlinVersion-release-IJ2020.1-1",
-                           'org.intellij.scala:2020.1.27',
-                           'Dart:201.6668.124',
-                           'org.jetbrains.plugins.ruby:201.6668.113',
-                           'com.jetbrains.php:201.6668.113'
+                           "org.jetbrains.kotlin:$kotlinVersion-release-IJ2020.1-5",
+                           'org.intellij.scala:2020.2.17',
+                           'Dart:202.6397.47',
+                           'org.jetbrains.plugins.ruby:202.6397.59',
+                           'com.jetbrains.php:202.6397.94'
+
 ]
 
 intellij {
@@ -106,37 +106,13 @@ targetCompatibility = javaVersion
     languageVersion = kotlinLanguageVersion
     apiVersion = kotlinTargetVersion
     jvmTarget = javaVersion
-    freeCompilerArgs = ["-Xskip-runtime-version-check"]
+    freeCompilerArgs = ["-Xskip-runtime-version-check", "-Xjsr305=strict"]
 }
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        csv.enabled false
-        html.enabled true
-    }
-}
-
-check.dependsOn jacocoTestReport
-
-jacocoTestReport {
-    afterEvaluate {
-        classDirectories.setFrom(
-                files(classDirectories.files.collect {
-                    fileTree(dir: it, exclude: [
-                            '**/settings/**',
-                            '**/util/**',
-                    ])
-                })
-        )
-    }
-}
-
 
 pluginVerifier {
     pluginFileName = "$rootProject.name-$version"
     ides = ["IC-201.6668.121"]
-    verifierVersion = "1.232"
+    verifierVersion = "1.241"
 }
 
 check.dependsOn pluginVerifier

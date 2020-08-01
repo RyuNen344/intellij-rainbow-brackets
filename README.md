@@ -7,11 +7,11 @@
 <p align="center">Rainbow Brackets / Rainbow Parentheses for IntelliJ based IDEs / Android Studioで動くようにjvm1.8をtargetにするやつ</p>
 
 <p align="center"> 
-<a href="https://circleci.com/gh/izhangzhihao/intellij-rainbow-brackets"><img src="https://img.shields.io/circleci/project/github/izhangzhihao/intellij-rainbow-brackets/2020.1.svg?style=flat-square"></a>
+<a href="https://circleci.com/gh/izhangzhihao/intellij-rainbow-brackets"><img src="https://img.shields.io/circleci/project/github/izhangzhihao/intellij-rainbow-brackets/2020.2.svg?style=flat-square"></a>
 <a href="https://github.com/izhangzhihao/intellij-rainbow-brackets/releases"><img src="https://img.shields.io/github/release/izhangzhihao/intellij-rainbow-brackets.svg?style=flat-square"></a>
-<a href="https://plugins.jetbrains.com/plugin/10080-rainbow-brackets"><img src="https://img.shields.io/jetbrains/plugin/d/10080-rainbow-brackets.svg?style=flat-square"></a>
+<a href="https://plugins.jetbrains.com/plugin/10080-rainbow-brackets"><img src="https://img.shields.io/jetbrains/plugin/r/stars/10080?style=flat-square"></a>
+<a href="https://plugins.jetbrains.com/embeddable/install/10080"><img src="https://img.shields.io/jetbrains/plugin/d/10080-rainbow-brackets.svg?style=flat-square"></a>
 <a href="https://plugins.jetbrains.com/plugin/10080-rainbow-brackets"><img src="https://img.shields.io/jetbrains/plugin/v/10080-rainbow-brackets.svg?style=flat-square"></a>
-<a href="https://github.com/izhangzhihao/intellij-rainbow-brackets/"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square"></a>
 <a href="https://opencollective.com/intellij-rainbow-brackets#backer"><img src="https://img.shields.io/opencollective/backers/intellij-rainbow-brackets?style=flat-square"></a>
 <a href="https://opencollective.com/intellij-rainbow-brackets#sponsor"><img src="https://img.shields.io/opencollective/sponsors/intellij-rainbow-brackets?style=flat-square"></a>
 </p>
@@ -22,8 +22,8 @@
 - [Supported languages](#supported-languages)
 - [Author's choice](#authors-choice)
 - [Sponsored By](#sponsored-by)
-- [Screenshots](#screenshots)
 - [Install](#install)
+- [Screenshots](#screenshots)
 - [Customize colors](#customize-colors)
 - [Use color generator](#use-color-generator)
 - [Config file path](#config-file-path)
@@ -67,6 +67,24 @@ Development powered by [JetBrains](https://www.jetbrains.com/?from=IntelliJRainb
 [![https://www.jetbrains.com/?from=IntelliJRainbowBrackets](./screenshots/jetbrains.svg)](https://www.jetbrains.com/?from=IntelliJRainbowBrackets)
 
 Whichever technologies you use, there's a JetBrains tool to match.
+
+[![https://tracking.gitads.io/?repo=intellij-rainbow-brackets](https://images.gitads.io/intellij-rainbow-brackets)](https://tracking.gitads.io/?repo=intellij-rainbow-brackets)
+
+## Install
+
+<a href="https://plugins.jetbrains.com/embeddable/install/10080">
+    <img src="https://user-images.githubusercontent.com/12044174/89017261-99d3ef00-d34c-11ea-9b6b-12f1d3c22a26.png" width="300"/>
+</a>
+
+Or you could install it inside your IDE:
+
+For Windows & Linux - <kbd>File</kbd> > <kbd>Settings</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "Rainbow Brackets"</kbd> > <kbd>Install Plugin</kbd> > <kbd>Restart IntelliJ IDEA</kbd>
+
+For Mac - <kbd>IntelliJ IDEA</kbd> > <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "Rainbow Brackets"</kbd> > <kbd>Install Plugin</kbd>  > <kbd>Restart IntelliJ IDEA</kbd>
+
+### Install snapshot build
+
+You can download the latest snapshot build from [here](https://circleci.com/gh/izhangzhihao/intellij-rainbow-brackets), just click in the latest build and click the 'Artifacts' tab.(You must logged in via github) After the snapshot build downloaded, just drag the zip file into your IDE and done.
 
 ## Screenshots
 
@@ -119,16 +137,6 @@ NOTE: <kbd>Button3</kbd> means "Secondary Click (click or tap with two fingers)"
 
 * looking forward to your screenshots(PR welcome!)
 
-## Install
-
-For Windows & Linux - <kbd>File</kbd> > <kbd>Settings</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "Rainbow Brackets"</kbd> > <kbd>Install Plugin</kbd> > <kbd>Restart IntelliJ IDEA</kbd>
-
-For Mac - <kbd>IntelliJ IDEA</kbd> > <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "Rainbow Brackets"</kbd> > <kbd>Install Plugin</kbd>  > <kbd>Restart IntelliJ IDEA</kbd>
-
-### Install snapshot build
-
-You can download the latest snapshot build from [here](https://circleci.com/gh/izhangzhihao/intellij-rainbow-brackets), just click in the latest build and click the 'Artifacts' tab.(You must logged in via github)
-
 ## Customize colors
 
 <kbd>Settings/Preferences</kbd> > <kbd>Editor</kbd> > <kbd>Color Scheme</kbd> > <kbd>Rainbow Brackets</kbd>:
@@ -180,13 +188,13 @@ Please follow [the official guide](https://www.jetbrains.com/help/idea/configuri
 If you want to customize the advanced configuration, you could edit the config file then restart your IDE. 
 Config file path in `APP_CONFIG/rainbow_brackets.xml`. 
 
-In MAC OS env maybe like `~/Library/Preferences/IntelliJIdea2020.1/options/rainbow_brackets.xml`.
+In MAC OS env maybe like `~/Library/Preferences/IntelliJIdea2020.2/options/rainbow_brackets.xml`.
 
-If you are using the ToolBox, then it will be like `~/Library/ApplicationSupport/JetBrains/IntelliJIdea2020.1/options/rainbow_brackets.xml`
+If you are using the ToolBox, then it will be like `~/Library/ApplicationSupport/JetBrains/IntelliJIdea2020.2/options/rainbow_brackets.xml`
 
 In Linux env maybe like `~/.IntelliJIdea/config/options/rainbow_brackets.xml`.
 
-In Windows env maybe like `C:\Users\izhangzhihao\.IntelliJIdea2020.1\config\options\rainbow_brackets.xml`.
+In Windows env maybe like `C:\Users\izhangzhihao\.IntelliJIdea2020.2\config\options\rainbow_brackets.xml`.
 
 ## HTML code in js
 
@@ -267,8 +275,8 @@ You can support us by the following actions:
   </tr>
   <tr></tr>
   <tr align="center">
-    <td><img width="70%" src="./screenshots/alipay.jpg"></td>
-    <td><img width="70%" src="./screenshots/wechat.jpg"></td>
+    <td><img width="70%" src="https://user-images.githubusercontent.com/12044174/85197261-77dd5a80-b312-11ea-9630-51caf7d634f2.jpg"></td>
+    <td><img width="70%" src="https://user-images.githubusercontent.com/12044174/85197263-7b70e180-b312-11ea-917a-35eab2ea08ae.jpg"></td>
   </tr>
 </table>
 

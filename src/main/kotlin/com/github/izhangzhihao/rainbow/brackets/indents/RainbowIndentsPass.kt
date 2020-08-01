@@ -9,6 +9,7 @@ import com.intellij.codeInsight.highlighting.CodeBlockSupportHandler
 import com.intellij.ide.actions.ToggleZenModeAction
 import com.intellij.lang.Language
 import com.intellij.lang.LanguageParserDefinitions
+import com.intellij.openapi.application.ApplicationInfo
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.editor.IndentGuideDescriptor
@@ -359,6 +360,7 @@ class RainbowIndentsPass internal constructor(
         private val XML_TAG_END_CONDITION: (PsiElement) -> Boolean = { element ->
             element is XmlToken && element.tokenType == XmlTokenType.XML_TAG_END
         }
+        private val is201 = ApplicationInfo.getInstance().apiVersion.contains("-201.")
 
         private val RENDERER: CustomHighlighterRenderer = CustomHighlighterRenderer renderer@{ editor, highlighter, g ->
             if (editor !is EditorEx) return@renderer
@@ -420,6 +422,11 @@ class RainbowIndentsPass internal constructor(
                 maxY = min(maxY, clip.y + clip.height)
             }
             if (start.y >= maxY) return@renderer
+            val targetX = if (is201) {
+                start.x + 2.toDouble()
+            } else {
+                Math.max(0, start.x + com.intellij.openapi.editor.impl.view.EditorPainter.getIndentGuideShift(editor)).toDouble()
+            }
             g.color = if (selected) {
                 rainbowInfo.color
             } else {
@@ -443,7 +450,7 @@ class RainbowIndentsPass internal constructor(
             //     2. Show indent as is if it doesn't intersect with soft wrap-introduced text;
             val softWraps = editor.softWrapModel.registeredSoftWraps
             if (selected || softWraps.isEmpty()) {
-                LinePainter2D.paint(g as Graphics2D, start.x + 2.toDouble(), start.y.toDouble(), start.x + 2.toDouble(), maxY - 1.toDouble())
+                LinePainter2D.paint(g as Graphics2D, targetX, start.y.toDouble(), targetX, maxY - 1.toDouble())
             } else {
                 var startY = start.y
                 var startVisualLine = startPosition.line + 1
@@ -460,7 +467,7 @@ class RainbowIndentsPass internal constructor(
                             val softWrap: SoftWrap = softWraps[it.startOrPrevWrapIndex]
                             if (softWrap.indentInColumns < indentColumn) {
                                 if (startY < currY) {
-                                    LinePainter2D.paint((g as Graphics2D), start.x + 2.toDouble(), startY.toDouble(), start.x + 2.toDouble(), currY - 1.toDouble())
+                                    LinePainter2D.paint((g as Graphics2D), targetX, startY.toDouble(), targetX, currY - 1.toDouble())
                                 }
                                 startY = currY + lineHeight
                             }
@@ -469,7 +476,7 @@ class RainbowIndentsPass internal constructor(
                     it.advance()
                 }
                 if (startY < maxY) {
-                    LinePainter2D.paint((g as Graphics2D), start.x + 2.toDouble(), startY.toDouble(), start.x + 2.toDouble(), maxY - 1.toDouble())
+                    LinePainter2D.paint((g as Graphics2D), targetX, startY.toDouble(), targetX, maxY - 1.toDouble())
                 }
             }
         }
